@@ -1,0 +1,16 @@
+body {
+    background-color: #494747;
+}
+
+#elemento  {
+    margin: auto;
+    border: 10px solid #4e3131;
+    padding: 10px;
+    border-radius: 30px;
+    outline: 10px solid #b9a1a1;
+}
+
+.texto {
+    color: white;
+    background-color: #5a3030;
+}
