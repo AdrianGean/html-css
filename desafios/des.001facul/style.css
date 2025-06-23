@@ -20,17 +20,20 @@ h3 {
 }
 
 img{
-    text-align: center;
     width: 40%;
     border-style: solid;
 }
 
 .fotoindex {
    text-align: center;
-    margin: 0;
-    padding: 0;
-   
 }
+
+.linksemborda {
+    border: none; 
+    background-color: transparent; 
+    padding: 0; 
+}
+
 
 .imagem {
     text-align: center;
