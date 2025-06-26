@@ -36,18 +36,45 @@ function validarFormulario() {
 }
 
 
-
 function alternarTema() {
     const corpo = document.body;
     const botao = document.getElementById("botaoTema");
 
     corpo.classList.toggle("modo-escuro");
 
-    if (corpo.classList.contains("modo-escuro")) {
-        botao.textContent = "☀️ Modo Claro";
-    } else {
-        botao.textContent = "🌙 Modo Escuro";
-    }
+    const modoEscuroAtivo = corpo.classList.contains("modo-escuro");
+
+    botao.textContent = modoEscuroAtivo ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+
+    localStorage.setItem("tema", modoEscuroAtivo ? "escuro" : "claro");
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const temaSalvo = localStorage.getItem("tema");
+    const corpo = document.body;
+    const botao = document.getElementById("botaoTema");
 
+    if (temaSalvo === "escuro") {
+        corpo.classList.add("modo-escuro");
+        if (botao) botao.textContent = "☀️ Modo Claro";
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const botaoMenu = document.getElementById("botaoMenu");
+    const menuItens = document.getElementById("menuItens");
+
+    if (botaoMenu && menuItens) {
+        botaoMenu.addEventListener("click", function (e) {
+            e.preventDefault();
+            menuItens.classList.toggle("ativo");
+        });
+
+        document.addEventListener("click", function (e) {
+            if (!botaoMenu.contains(e.target) && !menuItens.contains(e.target)) {
+                menuItens.classList.remove("ativo");
+            }
+        });
+    }
+});
