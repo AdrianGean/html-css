@@ -6,6 +6,7 @@
     <title>Não concordo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -23,20 +24,26 @@
                 "hist.html">História do blog</a>
                 </div>
     </nav>
-
+    <button id="botaoTema" onclick="alternarTema()">🌙 Modo Escuro</button>
     <h1>Não concorda?</h1>
     <p>Preencha o formulário abaixo que entraremos em contato</p>
-    <form action="">
+    <form id="formContato" onsubmit="return validarFormulario()">
         <label for="nome">Insira seu nome:</label>
-        <input type="text"><br>
+        <input id="nome" type="text"><br>
+
         <label for="idade">Insira sua idade:</label>
-        <input type="number"><br>
-        <label for="numero cartao">Insira seu número de telefone:</label>
-        <input type="number"><br>
-        <label for="nome">Insira seu código postal:</label>
-        <input type="number"><br>
+        <input id="idade" type="number"><br>
+
+        <label for="telefone">Insira seu número de telefone:</label>
+        <input id="telefone" type="tel"><br>
+
+        <label for="cep">Insira seu código postal:</label>
+        <input id="cep" type="text"><br>
+
         <button type="submit">Enviar</button>
     </form>
+    <div id="feedback"></div>
+
     <p id="pdiferente">Obrigado pela colaboração, entraremos em contato para oferecer nossos planos. Segue um vídeo sobre como o ambiente influência no aprendizado:</p>
     <div class="video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/IDC7DyOrG4w?si=1LFXFsvBH_EfyQdQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -45,7 +52,7 @@
     <hr>
     <h1>Nossos planos</h2>
     <br>
-<div class="tabela">
+    <div class="tabela">
     
         <table>
             <caption><strong>Valores dos planos</strong></caption>
@@ -74,7 +81,7 @@
                 </tr>
             </tfoot>
         </table>
-</div>
-<p>
+    </div>
+    <p>
     <a href="index.html">Voltar para página inicial</a>
-</p>
+    </p>
