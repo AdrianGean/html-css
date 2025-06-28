@@ -78,3 +78,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+function validarPagamento() {
+    const nome = document.getElementById("nomeCartao").value.trim();
+    const numero = document.getElementById("numeroCartao").value.trim();
+    const validade = document.getElementById("validade").value.trim();
+    const cvv = document.getElementById("cvv").value.trim();
+    const feedback = document.getElementById("feedbackPagamento");
+
+    if (nome === "" || numero.length !== 16 || validade.length < 4 || cvv.length !== 3) {
+        feedback.textContent = "Por favor, preencha todos os dados corretamente.";
+        feedback.className = "erro";
+        return false;
+    }
+
+    feedback.textContent = "Pagamento efetuado com sucesso!";
+    feedback.className = "sucesso";
+    return false; 
+}
